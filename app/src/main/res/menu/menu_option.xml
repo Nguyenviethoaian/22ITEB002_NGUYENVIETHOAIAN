@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/overflowMenu"
+        android:icon="@drawable/ic_launcher_background"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item android:id="@+id/menuItem1"
+                android:title="Số nguyên tố"
+                app:showAsAction="always" />
+            <item android:id="@+id/menuItem2"
+                android:title="Giải phương trình"
+                app:showAsAction="always" />
+            <item android:id="@+id/menuItem3"
+                android:title="Quản lí học phần"
+                app:showAsAction="always">
+                <menu>
+                    <item android:id="@+id/menuItem3.1"
+                        android:title="Trang học phần"
+                        android:showAsAction="always" />
+                    <item android:id="@+id/menuItem3.2"
+                        android:title="Danh sách học phần"
+                        android:showAsAction="always" />
+                </menu>
+            </item>
+        </menu>
+    </item>
+</menu>
