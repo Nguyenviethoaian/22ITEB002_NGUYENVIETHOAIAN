@@ -47,6 +47,30 @@
         <TextView
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:text="Mã học phần: "
+            android:textSize="20dp"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="left"/>
+        <EditText
+            android:id="@+id/edtId"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Nhập mã học phần"
+            android:gravity="center"
+            android:ems="10"
+            android:minHeight="48dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
             android:text="Tên học phần: "
             android:textSize="20dp"
             android:layout_margin="10dp"
@@ -149,11 +173,8 @@
     </LinearLayout>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:itemCount="1"
-        tools:listitem="@layout/hocphan_list_view" />
-
+        android:id="@+id/lv"/>
 </LinearLayout>

@@ -6,12 +6,12 @@
         android:title="Giải phương trình" />
     <item android:id="@+id/menuItem3"
         android:title="Quản lí học phần">
-        <menu>
-            <item android:id="@+id/menuItem3.1"
-                android:title="Trang chủ học phần" />
-            <item android:id="@+id/menuItem3.2"
-                android:title="Danh sách học phần" />
-        </menu>
+<!--        <menu>-->
+<!--            <item android:id="@+id/menuItem3.1"-->
+<!--                android:title="Trang chủ học phần" />-->
+<!--            <item android:id="@+id/menuItem3.2"-->
+<!--                android:title="Danh sách học phần" />-->
+<!--        </menu>-->
     </item>
 
 </menu>

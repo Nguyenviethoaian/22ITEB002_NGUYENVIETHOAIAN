@@ -16,14 +16,14 @@
             <item android:id="@+id/menuItem3"
                 android:title="Quản lí học phần"
                 app:showAsAction="always">
-                <menu>
-                    <item android:id="@+id/menuItem3.1"
-                        android:title="Trang học phần"
-                        android:showAsAction="always" />
-                    <item android:id="@+id/menuItem3.2"
-                        android:title="Danh sách học phần"
-                        android:showAsAction="always" />
-                </menu>
+<!--                <menu>-->
+<!--                    <item android:id="@+id/menuItem3.1"-->
+<!--                        android:title="Trang học phần"-->
+<!--                        android:showAsAction="always" />-->
+<!--                    <item android:id="@+id/menuItem3.2"-->
+<!--                        android:title="Danh sách học phần"-->
+<!--                        android:showAsAction="always" />-->
+<!--                </menu>-->
             </item>
         </menu>
     </item>

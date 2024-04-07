@@ -82,17 +82,22 @@ class ActivityPT : AppCompatActivity() {
                 startActivity(intent)
                 return true
             }
-            R.id.menuItem3_1->
-            {
+            R.id.menuItem3 -> {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.menuItem3_2->{
-                val intent = Intent(this, ActivityList::class.java)
-                startActivity(intent)
-                return true
-            }
+//            R.id.menuItem3_1->
+//            {
+//                val intent = Intent(this, MainActivity::class.java)
+//                startActivity(intent)
+//                return true
+//            }
+//            R.id.menuItem3_2->{
+//                val intent = Intent(this, ActivityList::class.java)
+//                startActivity(intent)
+//                return true
+//            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -120,17 +125,22 @@ class ActivityPT : AppCompatActivity() {
                 startActivity(intent)
                 return true
             }
-            R.id.menuItem3_1->
-            {
+            R.id.menuItem3 -> {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.menuItem3_2->{
-                val intent = Intent(this, ActivityPrime::class.java)
-                startActivity(intent)
-                return true
-            }
+//            R.id.menuItem3_1->
+//            {
+//                val intent = Intent(this, MainActivity::class.java)
+//                startActivity(intent)
+//                return true
+//            }
+//            R.id.menuItem3_2->{
+//                val intent = Intent(this, ActivityPrime::class.java)
+//                startActivity(intent)
+//                return true
+//            }
         }
         return super.onContextItemSelected(item)
     }
