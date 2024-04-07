@@ -2,6 +2,7 @@ package com.example.a22iteb002_nguyenviethoaian
 
 import android.content.ContentValues
 import android.content.Intent
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.view.ContextMenu
@@ -14,6 +15,7 @@ import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.a22iteb002_nguyenviethoaian.R.id.btnQuery
 
 class MainActivity : AppCompatActivity() {
     private lateinit var lv: ListView
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnSearch:Button
     private lateinit var btnDele:Button
     private lateinit var btnUpdate:Button
+    private lateinit var btnQuery:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         btnDele=findViewById(R.id.btnDele)
         btnUpdate=findViewById(R.id.btnUpdate)
         btnSearch=findViewById(R.id.btnSearch)
+        btnQuery=findViewById(R.id.btnQuery)
 
 
         lv= findViewById(R.id.lv)
@@ -72,6 +76,7 @@ class MainActivity : AppCompatActivity() {
             myValue.put("semester",semester)
             val msg: String
             if(myDatabase.insert("myCourses",null,myValue).toInt() == -1 ) {
+
                 msg  ="Fail to Insert"
             }else{
                 msg ="Insert Sucessfully"
@@ -85,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         }
         btnDele.setOnClickListener {
             val id :String = edtId.text.toString()
-            val n: Int = myDatabase.delete("myCourse","id=?", arrayOf(id))
+            val n: Int = myDatabase.delete("myCourses","id=?", arrayOf(id))
             if(n==0){
                 Toast.makeText(this, "Fail Delete record", Toast.LENGTH_SHORT).show()
             } else{
@@ -104,16 +109,12 @@ class MainActivity : AppCompatActivity() {
                 myValue.put("number",number)
                 myValue.put("semester",semester)
                 val n: Int = myDatabase.update("myCourses",myValue,"id=?", arrayOf(id))
-                if(n==0){
-                    Toast.makeText(this, "Fail Delete record", Toast.LENGTH_SHORT).show()
-                } else{
-                    Toast.makeText(this,"Delete sucessfully",Toast.LENGTH_SHORT).show()
-                }
-                if(n==0){
-                    Toast.makeText(this, "Fail Update record", Toast.LENGTH_SHORT).show()
-                } else{
-                    Toast.makeText(this,n.toString() +"Update sucessfully",Toast.LENGTH_SHORT).show()
-                }
+            if (n == 0) {
+                Toast.makeText(this, "Fail Update record", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, n.toString() + "Update successfully", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
 
@@ -127,6 +128,19 @@ class MainActivity : AppCompatActivity() {
             }catch (e:Exception){
                 Toast.makeText(this,"Loi",Toast.LENGTH_SHORT).show()
             }
+        }
+        btnQuery.setOnClickListener {
+            myList.clear()
+            val c: Cursor = myDatabase.query("myCourses",null,null,null,null,null,null)
+            c.moveToNext()
+            var data: String =""
+            while(c.isAfterLast==false){
+                data= c.getString(0)+ "-" +c.getString(1)+"-"+c.getString(2)+"-"+c.getString(3)
+                c.moveToNext()
+                myList.add(data)
+            }
+            c.close()
+            hocPhanAdapter.notifyDataSetChanged()
         }
     }
 
